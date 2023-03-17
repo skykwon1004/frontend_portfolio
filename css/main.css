@@ -1,5 +1,13 @@
 :root {
-    --mc: #d1392b;
+    --mc: #f8d10a;
+}
+
+.font_P {
+    font-family: 'Pretendard';
+}
+
+.font_M {
+    font-family: 'Montserrat';
 }
 
 * {
@@ -12,11 +20,8 @@
 }
 
 .section {
-    /* background: #f4f0eb; */
     background: #fff;
     color: #333;
-    /* background: #333;
-    color: #fff; */
     text-align: center;
 }
 
@@ -35,20 +40,62 @@
     line-height: 30px;
 }
 
-.gnb li.on {
+/* .gnb li.on {
     color: #333;
     font-weight: 700;
     transition: 1s;
+} */
+
+.gnb a {
+    position: relative;
+    display: block;
+    line-height: 40px;
+    padding: 0 0 0 30px;
+    color: #333;
+    font-size: 0;
 }
 
-.section h3 {
-    font-size: 10px;
+.gnb a::before {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 0;
+    transform: translate(-50%, -50%);
+
+    width: 5px;
+    height: 5px;
+    background: #999;
+    border-radius: 50%;
+
+    transition: 0.3s;
 }
 
-.section.on h3 {
-    font-size: 100px;
-    font-weight: 700;
-    transition: 1s 1s;
+.gnb a::after {
+    content: "";
+    position: absolute;
+    inset: 50% auto auto 0;
+    transform: translate(-50%, -50%);
+
+    width: 20px;
+    height: 20px;
+    border: 1px solid #999;
+    border-radius: 50%;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+.gnb li.on a::after {
+    opacity: 0.5;
+}
+
+.section .sub01 {
+    filter: grayscale(1);
+    transition: 0.5s;
+}
+
+.section.on .sub01 {
+    filter: grayscale(0);
+    opacity: 1;
+    transition: 0.5s 0.5s;
 }
 
 .title {
@@ -131,12 +178,8 @@ h2::before {
     display: flex;
 }
 
-/* .sub01 .left {
-    background: #f9f9f9;
-} */
-
 .sub01 .left figure {
-    width: 800px;
+    width: 900px;
     height: 100vh;
     margin: 0 auto;
     display: flex;
@@ -152,46 +195,45 @@ h2::before {
 }
 
 .sub01 .right {
-    flex: 1;
-
     display: flex;
     flex-direction: column;
-    align-items:flex-start;
+    align-items: flex-start;
     justify-content: center;
     text-align: left;
     padding: 0 500px 0 100px;
     background: #fff;
 }
 
-
 .sub01 .right span {
     display: block;
-    font-size: 13px;
-    font-weight: 700;
-    text-indent: 2px;
     margin: 0 0 10px 0;
+    font-size: 15px;
+    font-weight: 700;
+    color: #888;
+    text-indent: 2px;
 }
 
 .sub01 .right strong {
     position: relative;
     display: block;
-    font-size: 23px;
-    font-weight: 500;
+    margin: 0 0 40px 0;
     padding: 0 0 20px 0;
-    margin: 0 0 30px 0;
+    font-size: 25px;
+    font-weight: 500;
 }
 
 .sub01 .right strong::after {
     content: "";
     position: absolute;
     inset: auto auto 0 0;
-    width: 200px;
+    width: 400px;
     height: 1px;
     background: #ddd;
 }
 
 .sub01 .right dl {
     line-height: 25px;
+    margin: 0 0 40px 0;
 }
 
 .sub01 .right dt {
@@ -207,6 +249,53 @@ h2::before {
 }
 
 
+.web_page {
+    padding: 12px 50px;
+    border-radius: 20px;
+    /* background: var(--mc); */
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    background: #fff;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+/* section03 */
+.sub02 {
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+}
+
+.sub02 .inner .left {
+    order: 2;
+}
+
+.sub02 .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    text-align: left;
+    padding: 0 0 0 0;
+    background: #fff;
+}
+
+.sub02 .left {
+    background: #f9f9f9;
+    padding: 0 500px 0 100px;
+}
+
+.sub02 .left figure {
+    width: 900px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0 0 0;
+}
 
 
 
@@ -216,8 +305,103 @@ h2::before {
 
 
 
+.cover {
+    position: fixed;
+    inset: 0 0 auto 0;
+    background: var(--mc);
+    z-index: 999;
+    font-size: 41px;
+    font-weight: 700;
+    line-height: 90px;
+    color: #333;
 
 
+    /* display: none; */
+    height: 0;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.cover.on {
+    height: 100vh;
+}
+
+.cover ul {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+
+.toTop {
+    position: fixed;
+    inset: auto 50px 50px auto;
+    z-index: 999;
+    color: var(--mc);
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.mopen {
+    position: fixed;
+    inset: 50px 50px auto auto;
+    z-index: 1000;
+
+    width: 30px;
+    height: 30px;
+    background: var(--mc);
+}
+
+.mopen button {
+    font-size: 0;
+    border: none;
+    outline: none;
+    background: transparent;
+}
+
+.mopen::before,
+.mopen::after {
+    content: "";
+    position: absolute;
+    inset: 5px 5px auto 5px;
+    background: #333;
+    height: 2px;
+}
+
+.mopen::before {
+    inset: 5px 5px auto 5px;
+}
+
+.mopen::after {
+    inset: auto 5px 5px 5px;
+}
+
+.mopen button::before,
+.mopen button::after {
+    content: "";
+    position: absolute;
+    inset: 50% 5px auto 5px;
+    transform: translate(0, -50%);
+    background: #333;
+    height: 2px;
+}
+
+.mopen.on::before,
+.mopen.on::after {
+    opacity: 0;
+}
+
+.mopen.on button::before {
+    transform: translate(0, -50%) rotate(45deg);
+}
+
+.mopen.on button::after {
+    transform: translate(0, -50%) rotate(-45deg);
+}
 
 
 

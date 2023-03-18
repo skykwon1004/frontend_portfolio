@@ -25,12 +25,6 @@
     text-align: center;
 }
 
-/* .section:nth-child(even) {
-    background: tomato;
-    color: #fff;
-    text-align: center;
-} */
-
 .gnb {
     position: fixed;
     inset: 50% 50px auto auto;
@@ -39,12 +33,6 @@
     color: #333;
     line-height: 30px;
 }
-
-/* .gnb li.on {
-    color: #333;
-    font-weight: 700;
-    transition: 1s;
-} */
 
 .gnb a {
     position: relative;
@@ -110,6 +98,7 @@
 }
 
 .index_page {
+
     display: flex;
     flex-direction: column;
     width: 1200px;
@@ -123,25 +112,25 @@
 
 h2 {
     position: relative;
-    font-size: 51px;
+    font-size: 47px;
     font-weight: 700;
-    margin: 0 0 5px 0;
+    margin: 0 0 20px 0;
     color: #E52F42;
     color: #d6ff00;
     color: #333;
 }
 
-h2::before {
+/* h2::before {
     content: "";
     position: absolute;
     inset: 0 50% auto auto;
     z-index: -1;
-    transform: translate(-200%, 0);
+    transform: translate(-500%, 0);
     width: 50px;
     height: 50px;
     border-radius: 50%;
     background: #f8d10a;
-}
+} */
 
 .index_page span {
     position: relative;
@@ -353,7 +342,6 @@ h2::before {
 
     width: 30px;
     height: 30px;
-    background: var(--mc);
 }
 
 .mopen button {
@@ -369,7 +357,7 @@ h2::before {
     position: absolute;
     inset: 5px 5px auto 5px;
     background: #333;
-    height: 2px;
+    height: 1px;
 }
 
 .mopen::before {
@@ -384,10 +372,10 @@ h2::before {
 .mopen button::after {
     content: "";
     position: absolute;
-    inset: 50% 5px auto 5px;
-    transform: translate(0, -50%);
+    inset: 48.5% 10px auto 10px;
+    transform: translate(0, 0);
     background: #333;
-    height: 2px;
+    height: 1px;
 }
 
 .mopen.on::before,
@@ -396,30 +384,81 @@ h2::before {
 }
 
 .mopen.on button::before {
+    inset: 48.5% 5px auto 5px;
     transform: translate(0, -50%) rotate(45deg);
 }
 
 .mopen.on button::after {
+    inset: 48.5% 5px auto 5px;
     transform: translate(0, -50%) rotate(-45deg);
 }
 
 
 
+/* .btn-shine {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.btn-shine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -120%);
+    padding: 50px 0;
+    background: linear-gradient(to right, #333 0, #bbb 10%, #333 20%);
+    background-position: 0;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 6s infinite linear;
+    animation-fill-mode: forwards;
+    -webkit-text-size-adjust: none;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: 47px;
+    font-weight: 700;
+}
+
+@keyframes shine {
+    0% {
+        background-position: 0 60%;
+        background-position: 1000px 100%;
+        background-position: 1000px;
+    }
+
+} */
 
 
+/* box */
+.box {
+    width: 60px;
+    height: 60px;
+    background: var(--mc);
+    border-radius: 50%;
+    position: absolute;
+    top: -4px;
+    left: 0;
+    transform: translate(450%, 0);
+    animation: boxmove 6s infinite;
+    z-index: -1;
+}
 
 
+/* 애니메이션 제작 */
+@keyframes boxmove {
+    0% {
+        left: 0px;
+    }
 
+    50% {
+        left: 600px;
+    }
 
+    100% {
+        right: 600px;
+    }
 
-
-
-
-
-
-
-
-
+}
 
 
 
